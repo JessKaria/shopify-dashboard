@@ -22,7 +22,6 @@ const Subscriptions = ({ customers, orders }) => {
   const threeMonths = moment().subtract(3, 'months')
   const oneMonthsAgo = moment().subtract(1, 'months')
 
-
   //!! New subscribers in last 30 days
   const newSubscribersinLastMonth = ordersClean.filter(item => item.tags === 'First, recurring_order' && item.created_at >= oneMonthsAgo)
 
@@ -50,6 +49,10 @@ const Subscriptions = ({ customers, orders }) => {
   const totalSubs = customers.filter(
     subs => subs.tags === 'active_subscriber' || subs.tags === 'active_subscriber, newsletter' || subs.tags === 'newsletter, active_subscriber')
 
+  // active subscribers by recurring subscription
+
+    
+
   const totalActiveSubs = fourLineItems.length + threeLineItems.length + twoLineItems.length + totalSubs.length
 
 
@@ -59,7 +62,7 @@ const Subscriptions = ({ customers, orders }) => {
     <div className="card">
       <header className="card-header">
         <p className="card-header-title">
-          Subscriptions Overview</p>
+          Active Subscribers</p>
         <a href="#" className="card-header-icon" aria-label="more options">
           <span className="icon">
             <i className="fa fa-angle-down" aria-hidden="true" />

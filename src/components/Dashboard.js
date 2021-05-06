@@ -7,6 +7,7 @@ import Subscriptions from './Subscriptions/Subscriptions'
 import SearchCustomers from './Customers/SearchCustomers'
 import TotalOrdersData from '../Data/TotalOrdersData.json'
 import TotalCustomersData from '../Data/TotalCustomersData.json'
+import Chart from './Chart/Chart'
 import Products from './Products/Products'
 import FilterProducts from './Products/Products'
 
@@ -43,6 +44,7 @@ const Dashboard = () => {
 
 
         <div className="column is-10">
+          <Chart orders={orders} />
           <Subscriptions orders={orders} customers={customers} />
           <div className="columns">
             <div className="column is-6">

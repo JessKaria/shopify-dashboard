@@ -37,6 +37,10 @@ $beige-lighter: #EFF0EB;
   margin: 10px;
 }
 
+.control {
+  margin: 10px;
+}
+
 #orange-header {
   background-color: #fe5000;
   padding: 10px;
@@ -44,17 +48,16 @@ $beige-lighter: #EFF0EB;
   height: 100px;
 }
 
-#scroll{
-  height: 200px;
-  overflow-y:scroll;
-  overflow-x:scroll;
-}
-
-
 
 .main-box {
-  height: 450px;
+  height: 250px;
   overflow-y:scroll;
   overflow-x:scroll;
   margin: 20px;
+}
+
+#input-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

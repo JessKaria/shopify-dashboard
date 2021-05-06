@@ -9,51 +9,40 @@ const SearchCustomers = ({ customers }) => {
 
   return <>
     <div className="card events-card">
-      <header className="card-header">
+      <header id="input-align" className="card-header">
         <p className="card-header-title">
           Customers</p>
-          <input className="search" onChange={(event) => setSearch(event.target.value)} placeholder="Search..." />
+        <div className="control">
+          <input className="input is-focused" type="text" onChange={(event) => setSearch(event.target.value)} placeholder="Search..." />
+        </div>
       </header>
       <header className="card-header">
-        <p className="card-header-title">Firstname</p>
-        <p className="card-header-title">Lastname</p>
+        <p className="card-header-title">First</p>
+        <p className="card-header-title">Last</p>
         <p className="card-header-title">Country</p>
         <p className="card-header-title">Spend</p>
         <p className="card-header-title">Orders</p>
         <p className="card-header-title">AOV</p>
-        
-        
-
       </header>
-      <div className="card-table">
-        <div className="content">
-          <div id="main-box" className="table is-fullwidth is-stripeds">
-            <div className="main-box">
-              <table className="tile">
-                <tbody>
-                
-                  {customers.filter((item) => {
-                    if (search === '') {
-                      return item
-                    } else if (item.first_name.toLowerCase().includes(search.toLowerCase()) || item.last_name.toLowerCase().includes(search.toLowerCase())  ) {
-                      return item
-                    }
-                  }).map((item) => {
-                    return <tr key={item.token}>
-                      <td width="5%"><i className="fa fa-bell-o" /></td>
-                      <td>{item.first_name}</td>
-                      <td>{item.last_name}</td>
-                      <td>{item.address}</td>
-                      <td>£{item.total_spend}</td>
-                      <td>{item.total_orders} Orders</td>
-                      <td>£{Math.round(item.total_spend / item.total_orders)} </td>
-                      
-                    </tr>
-                  })}
-
-                </tbody>
-              </table>
-            </div>
+      <div className="content">
+        <div id="main-box" className="container">
+          <div className="main-box">
+            {customers.filter((item) => {
+              if (search === '') {
+                return item
+              } else if (item.first_name.toLowerCase().includes(search.toLowerCase()) || item.last_name.toLowerCase().includes(search.toLowerCase())) {
+                return item
+              }
+            }).map((item) => {
+              return <header className="card-header" key={item.token}>
+                <p className="card-header-title">{item.first_name}</p>
+                <p className="card-header-title">{item.last_name}</p>
+                <p className="card-header-title">{item.address}</p>
+                <p className="card-header-title">£{item.total_spend}</p>
+                <p className="card-header-title">{item.total_orders}</p>
+                <p className="card-header-title">£{Math.round(item.total_spend / item.total_orders)} </p>
+              </header>
+            })}
           </div>
         </div>
       </div>
