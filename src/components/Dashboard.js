@@ -43,22 +43,10 @@ const Dashboard = () => {
 
 
         <div className="column is-10">
-          <section id="orange-header" className="hero is-info welcome is-small">
-            <div className="hero-body">
-              <div className="container">
-                <h1 className="title">
-                  Holla, Bauce Brothers.
-            </h1>
-                <h2 className="subtitle">
-                  I hope you are having a great day!
-            </h2>
-              </div>
-            </div>
-          </section>
           <Subscriptions orders={orders} customers={customers} />
           <div className="columns">
             <div className="column is-6">
-            <SearchCustomers customers={customers} />
+              <SearchCustomers customers={customers} />
             </div>
 
             <div className="column is-6">

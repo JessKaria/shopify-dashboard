@@ -8,8 +8,6 @@ import FourHotBoxes from './SubsModal/FourHotBoxes'
 import ThreeHotBoxes from './SubsModal/ThreeHotBoxes'
 import TwoHotBoxes from './SubsModal/TwoHotBoxes'
 
-
-
 const Subscriptions = ({ customers, orders }) => {
 
   //?? Transform date/time string, under the property 'created_at' to a moment object

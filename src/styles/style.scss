@@ -10,14 +10,22 @@ $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 
 .title {
-  font-size: 4em;
+  font-size: 3em;
   color: black;
+}
+
+.content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
+  margin-bottom: 0.5em;
 }
 
 .subtitle {
   font-size: 1em;
   color: black;
-  font-weight: 500;
+}
+
+.orders-title {
+  font-size: 2em;
+  color: black;
 }
 
 .page-container {
@@ -33,6 +41,7 @@ $beige-lighter: #EFF0EB;
   background-color: #fe5000;
   padding: 10px;
   margin-bottom: 15px;
+  height: 100px;
 }
 
 #scroll{

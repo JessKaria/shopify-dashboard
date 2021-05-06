@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const TotalSubscribers = ({ totalActiveSubs}) => {
+const TotalSubscribers = ({ totalActiveSubs }) => {
 
   return <>
     <p className="title">{totalActiveSubs}</p>
