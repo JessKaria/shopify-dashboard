@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+
+$black: #000000;
+$yellow: #FFD600;
+$rosa : #D00000;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+.title {
+  font-size: 4em;
+  color: black;
+}
+
+.subtitle {
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
+}
+
+.page-container {
+  padding: 20px;
+  background-color: black;
+}
+
+.card-content {
+  margin: 10px;
+}
+
+#orange-header {
+  background-color: #fe5000;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+#scroll{
+  height: 200px;
+  overflow-y:scroll;
+  overflow-x:scroll;
+}
+
+
+
+.main-box {
+  height: 450px;
+  overflow-y:scroll;
+  overflow-x:scroll;
+  margin: 20px;
+}
