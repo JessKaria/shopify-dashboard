@@ -16,7 +16,9 @@ const Dashboard = () => {
 
 
 
+
   useEffect(() => {
+
     //?? For demo purposes we are are importing JSON data from another file //??
     //?? Set the response data in state
 
@@ -24,12 +26,18 @@ const Dashboard = () => {
       .then(resp => {
         setOrders(resp.data)
       })
+      .catch(err => {
+        console.log(err)
+      })
 
     axios.get('../Data/TotalCustomersData.json')
       .then(resp => {
         setCustomers(resp.data)
       })
-      
+      .catch(err => {
+        console.log(err)
+      })
+
   }, [])
 
 
@@ -54,17 +62,13 @@ const Dashboard = () => {
             <div className="column is-6">
               <SearchCustomers customers={customers} />
             </div>
-
             <div className="column is-6">
               <FilterProducts orders={orders} />
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
-
   </>
 
 

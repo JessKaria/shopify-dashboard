@@ -36,6 +36,7 @@
     "react-chartjs-2": "^3.0.3",
     "react-datepicker": "^3.8.0",
     "react-dom": "^16.13.1",
+    "react-vis": "^1.11.7",
     "recharts": "^2.0.9"
   }
 }

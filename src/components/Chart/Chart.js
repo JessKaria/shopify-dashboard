@@ -1,14 +1,53 @@
 import React, { useEffect, useState } from 'react'
-import { Bar } from 'react-chartjs-2'
+import { Line, Bar } from 'react-chartjs-2'
+import axios from 'axios'
+import moment from 'moment'
+
 
 const Chart = ({ orders }) => {
+  const [chartData, setChartData] = useState({})
 
-  const destructureMap = orders.map(x => {
-    return {
-      created_at: x.created_at, line_items: x.line_items
-    }
-  })
+  const chart = () => {
 
+    const emptyCount = []
+    const emptyCreated = []
+
+    console.log(emptyCount,emptyCreated)
+
+    axios.get('../Data/TotalOrdersData.json')
+      .then(resp => {
+        const dateConverter = a => moment(a)
+        const ordersClean = resp.data.map(item => Object.assign(item, { created_at: dateConverter(item.created_at) }))
+
+        const sotedDate = ordersClean.sort(function(a,b) {
+          return a.created_at - b.created_at
+        })
+        for (const dataObj of ordersClean) {
+          emptyCount.push(dataObj.line_items[0].total_price)
+          emptyCreated.push(dataObj.created_at)
+        }
+        console.log(ordersClean)
+        setChartData({
+          labels: emptyCreated,
+          datasets: [
+            {
+              label: 'Orders over time',
+              data: emptyCount,
+              backgroundColor: [
+                '#fe5000'
+              ],
+              borderWidth: 1
+            }
+          ]
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+  useEffect(() => {
+    chart()
+  }, [])
 
 
   return <>
@@ -23,6 +62,35 @@ const Chart = ({ orders }) => {
       </header>
       <div className="card-content">
         <div className="content">
+          <div className="chart-area">
+            <Line
+              data={chartData}
+              options={{
+                responsive: true,
+                scales: {
+                  yAxes: [
+                    {
+                      ticks: {
+                        autoSkip: true,
+                        maxTicksLimit: 10,
+                        beginAtZero: true
+                      },
+                      gridLines: {
+                        display: false
+                      }
+                    }
+                  ],
+                  xAxes: [
+                    {
+                      gridLines: {
+                        display: false
+                      }
+                    }
+                  ]
+                }
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

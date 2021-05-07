@@ -51,14 +51,9 @@ const Subscriptions = ({ customers, orders }) => {
 
   // active subscribers by recurring subscription
 
-    
-
   const totalActiveSubs = fourLineItems.length + threeLineItems.length + twoLineItems.length + totalSubs.length
 
-
-
   return <>
-
     <div className="card">
       <header className="card-header">
         <p className="card-header-title">
@@ -110,10 +105,7 @@ const Subscriptions = ({ customers, orders }) => {
         </div>
       </div>
     </div>
-
-
   </>
-
 }
 
 export default Subscriptions
