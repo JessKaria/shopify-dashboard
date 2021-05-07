@@ -8,6 +8,7 @@ import TotalCustomersData from '../Data/TotalCustomersData.json'
 import Chart from './Chart/Chart'
 import Products from './Products/Products'
 import FilterProducts from './Products/Products'
+import Sidebar from './Sidebar/Sidebar'
 
 
 const Dashboard = () => {
@@ -47,11 +48,8 @@ const Dashboard = () => {
       <div className="columns">
         <div id="white-sidebar" className="column is-2 ">
           <aside className="menu is-hidden-mobile">
-            <p className="menu-label">
-              General</p>
             <ul className="menu-list">
-              <li><a>Dashboard</a></li>
-              <li><a>Customers</a></li>
+              <Sidebar orders={orders} />
             </ul>
           </aside>
         </div>

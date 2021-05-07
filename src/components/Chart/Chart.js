@@ -12,8 +12,6 @@ const Chart = ({ orders }) => {
     const emptyCount = []
     const emptyCreated = []
 
-    console.log(emptyCount,emptyCreated)
-
     axios.get('../Data/TotalOrdersData.json')
       .then(resp => {
         const dateConverter = a => moment(a)
@@ -26,7 +24,7 @@ const Chart = ({ orders }) => {
           emptyCount.push(dataObj.line_items[0].total_price)
           emptyCreated.push(dataObj.created_at)
         }
-        console.log(ordersClean)
+
         setChartData({
           labels: emptyCreated,
           datasets: [
