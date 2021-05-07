@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import moment, { months } from 'moment'
-import OrdersData from '../Data/OrdersData'
-import CustomerData from '../Data/CustomerData'
 import Subscriptions from './Subscriptions/Subscriptions'
 import SearchCustomers from './Customers/SearchCustomers'
 import TotalOrdersData from '../Data/TotalOrdersData.json'
@@ -19,11 +17,19 @@ const Dashboard = () => {
 
 
   useEffect(() => {
-    //!!<---Insert your get request here for both customer & order endpoints--->!!//
     //?? For demo purposes we are are importing JSON data from another file //??
     //?? Set the response data in state
-    setCustomers(TotalCustomersData)
-    setOrders(TotalOrdersData)
+
+    axios.get('../Data/TotalOrdersData.json')
+      .then(resp => {
+        setOrders(resp.data)
+      })
+
+    axios.get('../Data/TotalCustomersData.json')
+      .then(resp => {
+        setCustomers(resp.data)
+      })
+      
   }, [])
 
 
@@ -41,8 +47,6 @@ const Dashboard = () => {
             </ul>
           </aside>
         </div>
-
-
         <div className="column is-10">
           <Chart orders={orders} />
           <Subscriptions orders={orders} customers={customers} />

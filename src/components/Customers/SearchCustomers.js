@@ -3,9 +3,6 @@ import axios from 'axios'
 
 const SearchCustomers = ({ customers }) => {
   const [search, setSearch] = useState('')
-  console.log(search)
-
-
 
   return <>
     <div className="card events-card">
@@ -30,6 +27,7 @@ const SearchCustomers = ({ customers }) => {
             {customers.filter((item) => {
               if (search === '') {
                 return item
+                //Add a helper function from another file
               } else if (item.first_name.toLowerCase().includes(search.toLowerCase()) || item.last_name.toLowerCase().includes(search.toLowerCase())) {
                 return item
               }
@@ -40,6 +38,7 @@ const SearchCustomers = ({ customers }) => {
                 <p className="card-header-title">{item.address}</p>
                 <p className="card-header-title">£{item.total_spend}</p>
                 <p className="card-header-title">{item.total_orders}</p>
+         
                 <p className="card-header-title">£{Math.round(item.total_spend / item.total_orders)} </p>
               </header>
             })}

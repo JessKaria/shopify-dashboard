@@ -16,9 +16,9 @@ const FilterProducts = ({ orders }) => {
     <div className="card">
       <header className="card-header">
         <div id="input-align" className="card-header-title">
-          
-        <div className="date-picker">
-        Orders Overview
+          <div className="date-picker">
+            Orders Overview
+            
             <div className="container">
               <DatePicker
                 className="datepicker"
@@ -29,6 +29,7 @@ const FilterProducts = ({ orders }) => {
                 endDate={endDate}
               />
             </div>
+
             <div className="container">
               <DatePicker
                 className="datepicker"
@@ -40,6 +41,7 @@ const FilterProducts = ({ orders }) => {
                 minDate={startDate}
               />
             </div>
+
           </div>
         </div>
       </header>
@@ -52,6 +54,7 @@ const FilterProducts = ({ orders }) => {
                   <article className="tile is-child box">
                     <p className="title">{filterOrders().map(item => item.line_items[0]).filter(item => item.name === 'Bottle in a Bag').length}</p>
                     <p className="subtitle">Bottle in a Bag</p>
+                    
                   </article>
                 </div>
                 <div className="tile is-parent">
