@@ -6,17 +6,13 @@ import SearchCustomers from './Customers/SearchCustomers'
 import TotalOrdersData from '../Data/TotalOrdersData.json'
 import TotalCustomersData from '../Data/TotalCustomersData.json'
 import Chart from './Chart/Chart'
-import Products from './Products/Products'
 import FilterProducts from './Products/Products'
-import Sidebar from './Sidebar/Sidebar'
-
+import SidebarTop from './Sidebar/SidebarTop'
+import SidebarBottom from './Sidebar/SidebarBottom'
 
 const Dashboard = () => {
   const [orders, setOrders] = useState([])
   const [customers, setCustomers] = useState([])
-
-
-
 
   useEffect(() => {
 
@@ -40,38 +36,35 @@ const Dashboard = () => {
       })
 
   }, [])
-
-
-
+  
   return <>
     <div className="page-container">
       <div className="columns">
         <div id="white-sidebar" className="column is-2 ">
           <aside className="menu is-hidden-mobile">
             <ul className="menu-list">
-              <Sidebar orders={orders} />
+              <SidebarTop orders={orders} />
+              <SidebarBottom customers={customers} />
             </ul>
           </aside>
         </div>
         <div className="column is-10">
+        <Subscriptions orders={orders} customers={customers} />
           <Chart orders={orders} />
-          <Subscriptions orders={orders} customers={customers} />
           <div className="columns">
             <div className="column is-6">
-              <SearchCustomers customers={customers} />
+            <FilterProducts orders={orders} />
+            
+              
             </div>
             <div className="column is-6">
-              <FilterProducts orders={orders} />
+            <SearchCustomers customers={customers} />
             </div>
           </div>
         </div>
       </div>
     </div>
   </>
-
-
-
-
 }
 
 export default Dashboard

@@ -24,6 +24,7 @@ const SearchCustomers = ({ customers }) => {
       <div className="content">
         <div id="main-box" className="container">
           <div className="main-box">
+            
             {customers.filter((item) => {
               if (search === '') {
                 return item
@@ -45,9 +46,6 @@ const SearchCustomers = ({ customers }) => {
           </div>
         </div>
       </div>
-      <footer className="card-footer">
-        <a href="#" className="card-footer-item">View All</a>
-      </footer>
     </div>
 
   </>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import moment, { months } from 'moment'
+import moment from 'moment'
 import TotalSubscribers from './SubsModal/TotalSubscribers'
 import NewLastThreeMonths from './SubsModal/NewLastThreeMonths'
 import NewSubscribersinLastMonth from './SubsModal/NewSubscribersinLastMonth'
@@ -23,11 +22,21 @@ const Subscriptions = ({ customers, orders }) => {
   const oneMonthsAgo = moment().subtract(1, 'months')
 
   //!! New subscribers in last 30 days
-  const newSubscribersinLastMonth = ordersClean.filter(item => item.tags === 'First, recurring_order' && item.created_at >= oneMonthsAgo)
+  const newSubscribersinLastMonth = ordersClean.filter(
+    item => item.created_at >= oneMonthsAgo &&
+    item.tags === 'First, recurring_order' || 
+    item.line_items[0].name === 'Two Hot Boxes - 6 Month Sub' ||
+    item.line_items[0].name === 'Three Hot Boxes - 9 Month Sub' ||
+    item.line_items[0].name === 'Four Hot Boxes - A Years Supply')
 
   //!! New subscribers in the last 3 months
 
-  const newSubscribersinLastThreeMonths = ordersClean.filter(item => item.tags === 'First, recurring_order' && item.created_at >= threeMonths)
+  const newSubscribersinLastThreeMonths = ordersClean.filter(
+    item => item.created_at >= threeMonths &&
+    item.tags === 'First, recurring_order' || 
+    item.line_items[0].name === 'Two Hot Boxes - 6 Month Sub' ||
+    item.line_items[0].name === 'Three Hot Boxes - 9 Month Sub' ||
+    item.line_items[0].name === 'Four Hot Boxes - A Years Supply')
 
   //!! Active subs accross yearly pre-paid subscription
 
@@ -47,7 +56,7 @@ const Subscriptions = ({ customers, orders }) => {
   //!! total active subscribers 
 
   const totalSubs = customers.filter(
-    subs => subs.tags === 'active_subscriber' || subs.tags === 'active_subscriber, newsletter' || subs.tags === 'newsletter, active_subscriber')
+    subs => subs.tags === 'active_subscriber')
 
   // active subscribers by recurring subscription
 
@@ -59,9 +68,6 @@ const Subscriptions = ({ customers, orders }) => {
         <p className="card-header-title">
           Active Subscribers</p>
         <a href="#" className="card-header-icon" aria-label="more options">
-          <span className="icon">
-            <i className="fa fa-angle-down" aria-hidden="true" />
-          </span>
         </a>
       </header>
       <div className="card-content">

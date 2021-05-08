@@ -3,8 +3,7 @@ import { Line, Bar } from 'react-chartjs-2'
 import axios from 'axios'
 import moment from 'moment'
 
-
-const Chart = ({ orders }) => {
+const Chart = () => {
   const [chartData, setChartData] = useState({})
 
   const chart = () => {
@@ -20,11 +19,10 @@ const Chart = ({ orders }) => {
         const sotedDate = ordersClean.sort(function(a,b) {
           return a.created_at - b.created_at
         })
-        for (const dataObj of ordersClean) {
+        for (const dataObj of sotedDate) {
           emptyCount.push(dataObj.line_items[0].total_price)
           emptyCreated.push(dataObj.created_at)
         }
-
         setChartData({
           labels: emptyCreated,
           datasets: [
@@ -61,8 +59,9 @@ const Chart = ({ orders }) => {
       <div className="card-content">
         <div className="content">
           <div className="chart-area">
-            <Line
-              data={chartData}
+            <Bar
+              data={chartData} 
+              height={'55%'}
               options={{
                 responsive: true,
                 scales: {
@@ -81,7 +80,7 @@ const Chart = ({ orders }) => {
                   xAxes: [
                     {
                       gridLines: {
-                        display: false
+                        display: true
                       }
                     }
                   ]

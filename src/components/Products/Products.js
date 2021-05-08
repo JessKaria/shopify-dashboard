@@ -3,7 +3,7 @@ import moment from 'moment'
 import DatePicker from 'react-datepicker'
 
 const FilterProducts = ({ orders }) => {
-  const [startDate, setStartDate] = useState(new Date('2021/01/01'))
+  const [startDate, setStartDate] = useState(new Date('2021/02/01'))
   const [endDate, setEndDate] = useState(new Date('2021/05/01'))
   const cleanDate = moment(startDate)
   const cleanEnd = moment(endDate)
@@ -12,36 +12,34 @@ const FilterProducts = ({ orders }) => {
     return orders.filter(item => item.created_at >= cleanDate && item.created_at <= cleanEnd)
   }
 
+
   return <>
     <div className="card">
-      <header className="card-header">
-        <div id="input-align" className="card-header-title">
-          <div className="date-picker">
-            Orders Overview
-            
-            <div className="container">
-              <DatePicker
-                className="datepicker"
-                selected={startDate}
-                onChange={date => setStartDate(date)}
-                selectsStart
-                startDate={startDate}
-                endDate={endDate}
-              />
-            </div>
+      <header id="input-align" className="card-header">
+        <p className="card-header-title">
+          Products</p>
+        <div className="control">
+          <div className="container">
+            <DatePicker
+              className="datepicker"
+              selected={startDate}
+              onChange={date => setStartDate(date)}
+              selectsStart
+              startDate={startDate}
+              endDate={endDate}
+            />
+          </div>
 
-            <div className="container">
-              <DatePicker
-                className="datepicker"
-                selected={endDate}
-                onChange={date => setEndDate(date)}
-                selectsEnd
-                startDate={startDate}
-                endDate={endDate}
-                minDate={startDate}
-              />
-            </div>
-
+          <div className="container">
+            <DatePicker
+              className="datepicker"
+              selected={endDate}
+              onChange={date => setEndDate(date)}
+              selectsEnd
+              startDate={startDate}
+              endDate={endDate}
+              minDate={startDate}
+            />
           </div>
         </div>
       </header>
@@ -54,7 +52,7 @@ const FilterProducts = ({ orders }) => {
                   <article className="tile is-child box">
                     <p className="title">{filterOrders().map(item => item.line_items[0]).filter(item => item.name === 'Bottle in a Bag').length}</p>
                     <p className="subtitle">Bottle in a Bag</p>
-                    
+
                   </article>
                 </div>
                 <div className="tile is-parent">

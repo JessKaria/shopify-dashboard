@@ -3,61 +3,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
 
-$black: #000000;
-$yellow: #FFD600;
-$rosa : #D00000;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+$black: #0E0E0E;
+$orange: #fe5000;
+$white: #ffffff;
 
 .title {
   font-size: 3em;
-  color: black;
+  color: $white;
+  font-family: poppins;
 }
 
 .content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
   margin-bottom: 0.5em;
 }
 
+.card-header-title {
+  font-size: 1em;
+  color: $black;
+  font-family: poppins;
+}
+
+.navbar{
+  background-color: $black;
+}
+
+.navbar-item img {
+  max-height: 4rem;
+}
+
 .subtitle {
   font-size: 1em;
-  color: black;
+  color: $white;
+  font-family: poppins;
+}
+
+.box {
+  background-color: $black;
 }
 
 .orders-title {
   font-size: 2em;
-  color: black;
+  color: $black;
 }
 
 .page-container {
   padding: 20px;
-  background-color: black;
+  background-color: $black;
 }
 
-.card-content {
-  margin: 10px;
+div.card-content {
+  margin-bottom: 10px;
 }
 
 .control {
   margin: 10px;
 }
 
+a.button {
+  background-color: $orange;
+  color: $white;
+  border: none;
+  border-radius: 0px;
+}
+
 #orange-header {
-  background-color: #fe5000;
+  background-color: $orange;
   padding: 10px;
   margin-bottom: 15px;
   height: 100px;
 }
 
-#sidebar {
-  height: 900px;
-}
 
 .main-box {
-  height: 250px;
+  height: 295px;
   overflow-y:scroll;
   overflow-x:scroll;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: left;
 }
+
 
 #input-align {
   display: flex;
