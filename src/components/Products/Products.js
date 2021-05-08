@@ -3,15 +3,13 @@ import moment from 'moment'
 import DatePicker from 'react-datepicker'
 
 const FilterProducts = ({ orders }) => {
-  const [startDate, setStartDate] = useState(new Date('2021/02/01'))
-  const [endDate, setEndDate] = useState(new Date('2021/05/01'))
+  const [startDate, setStartDate] = useState(new Date('2021/01/01'))
+  const [endDate, setEndDate] = useState(new Date('2021/06/01'))
   const cleanDate = moment(startDate)
   const cleanEnd = moment(endDate)
-
   function filterOrders() {
     return orders.filter(item => item.created_at >= cleanDate && item.created_at <= cleanEnd)
   }
-
 
   return <>
     <div className="card">

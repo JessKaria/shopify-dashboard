@@ -12,7 +12,6 @@ const SidebarBottom = ({ customers }) => {
     }
   })
 
-  console.log(customerData)
 
   const averageOrders = customers.map(item => item.total_orders).reduce((acc, val) => acc + val, 0) / customers.length
 
@@ -35,26 +34,20 @@ const SidebarBottom = ({ customers }) => {
             <section className="column">
               <div className="tile is-ancestor has-text-centered">
                 <article className="tile is-child box">
-                  <p className="subtitle">{averageOrders.toFixed(0)}</p>
+                  <p className="title">{averageOrders.toFixed(0)}</p>
                   <p className="subtitle">Customer AON</p>
                 </article>
               </div>
               <div className="tile is-ancestor has-text-centered mt-3">
                 <article className="tile is-child box">
-                  <p className="subtitle">£{averageValue.toFixed(2)}</p>
+                  <p className="title">£{averageValue.toFixed(2)}</p>
                   <p className="subtitle">Customer AOV</p>
                 </article>
               </div>
               <div className="tile is-ancestor has-text-centered mt-3">
                 <article className="tile is-child box">
-                  <p className="subtitle">{marketing.length}</p>
+                  <p className="title">{marketing.length}</p>
                   <p className="subtitle">Accepts Marketing</p>
-                </article>
-              </div>
-              <div className="tile is-ancestor has-text-centered mt-3">
-                <article className="tile is-child box">
-                  <p className="subtitle">£{}</p>
-                  <p className="subtitle">Last 90 Days</p>
                 </article>
               </div>
             </section>

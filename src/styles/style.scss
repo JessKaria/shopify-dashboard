@@ -8,13 +8,13 @@ $orange: #fe5000;
 $white: #ffffff;
 
 .title {
-  font-size: 3em;
+  font-size: 1.5em;
   color: $white;
   font-family: poppins;
 }
 
 .content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .card-header-title {
@@ -32,7 +32,7 @@ $white: #ffffff;
 }
 
 .subtitle {
-  font-size: 1em;
+  font-size: 0.8em;
   color: $white;
   font-family: poppins;
 }
@@ -59,6 +59,10 @@ div.card-content {
   margin: 10px;
 }
 
+.notification is-link {
+  margin: 0px;
+}
+
 a.button {
   background-color: $orange;
   color: $white;
@@ -75,7 +79,7 @@ a.button {
 
 
 .main-box {
-  height: 295px;
+  height: 250px;
   overflow-y:scroll;
   overflow-x:scroll;
   display: flex;

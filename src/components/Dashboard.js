@@ -13,6 +13,7 @@ const Dashboard = () => {
   const [orders, setOrders] = useState([])
   const [customers, setCustomers] = useState([])
   console.log(orders)
+  console.log(customers)
 
   useEffect(() => {
 

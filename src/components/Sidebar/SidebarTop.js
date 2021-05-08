@@ -34,25 +34,25 @@ const Sidebar = ({ orders }) => {
             <section className="column">
               <div className="tile is-ancestor has-text-centered">
                 <article className="tile is-child box">
-                  <p className="subtitle">£{clean.toFixed(2)}</p>
+                  <p className="title">£{clean.toFixed(2)}</p>
                   <p className="subtitle">Total Sales</p>
                 </article>
               </div>
               <div className="tile is-ancestor has-text-centered mt-3">
                 <article className="tile is-child box">
-                  <p className="subtitle">£{lastSeven.toFixed(2)}</p>
+                  <p className="title">£{lastSeven.toFixed(2)}</p>
                   <p className="subtitle">Last 7 Days</p>
                 </article>
               </div>
               <div className="tile is-ancestor has-text-centered mt-3">
                 <article className="tile is-child box">
-                  <p className="subtitle">£{lastThirdy.toFixed(2)}</p>
+                  <p className="title">£{lastThirdy.toFixed(2)}</p>
                   <p className="subtitle">Last 30 Days</p>
                 </article>
               </div>
               <div className="tile is-ancestor has-text-centered mt-3">
                 <article className="tile is-child box">
-                  <p className="subtitle">£{lastThreeMonths.toFixed(2)}</p>
+                  <p className="title">£{lastThreeMonths.toFixed(2)}</p>
                   <p className="subtitle">Last 90 Days</p>
                 </article>
               </div>

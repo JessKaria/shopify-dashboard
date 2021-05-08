@@ -13,18 +13,26 @@ const SearchCustomers = ({ customers }) => {
           <input className="input is-focused" type="text" onChange={(event) => setSearch(event.target.value)} placeholder="Search..." />
         </div>
       </header>
-      <header className="card-header">
-        <p className="card-header-title">First</p>
-        <p className="card-header-title">Last</p>
-        <p className="card-header-title">Country</p>
-        <p className="card-header-title">Spend</p>
-        <p className="card-header-title">Orders</p>
-        <p className="card-header-title">AOV</p>
-      </header>
       <div className="content">
         <div id="main-box" className="container">
           <div className="main-box">
-            
+            <div className="card-table">
+              <div className="content">
+                <table className="table is-fullwidth is-striped">
+                  <tbody>
+                    <tr>
+                      <td width="5%"><i className="fa fa-bell-o" /></td>
+                      <td>First</td>
+                      <td>Last</td>
+                      <td>Total Spend</td>
+                      <td>Order Count</td>
+                      <td>Subscriber</td>
+                      <td>AOV</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             {customers.filter((item) => {
               if (search === '') {
                 return item
@@ -33,15 +41,25 @@ const SearchCustomers = ({ customers }) => {
                 return item
               }
             }).map((item) => {
-              return <header className="card-header" key={item.token}>
-                <p className="card-header-title">{item.first_name}</p>
-                <p className="card-header-title">{item.last_name}</p>
-                <p className="card-header-title">{item.address}</p>
-                <p className="card-header-title">£{item.total_spend}</p>
-                <p className="card-header-title">{item.total_orders}</p>
-         
-                <p className="card-header-title">£{Math.round(item.total_spend / item.total_orders)} </p>
-              </header>
+              return <article className="card-table" key={item.token} >
+                <div className="card-table">
+                  <div className="content">
+                    <table className="table is-fullwidth is-striped">
+                      <tbody>
+                        <tr>
+                          <td width="5%"><i className="fa fa-bell-o" /></td>
+                          <td>{item.first_name}</td>
+                          <td>{item.last_name}</td>
+                          <td>{item.total_spend}</td>
+                          <td>{item.total_orders}</td>
+                          <td>{item.tags === 'active_subscriber' ? '👍🏾' : '👎🏾'}</td>
+                          <td className="level-right"><a className="button is-small is-primary" href="#">£{Math.round(item.total_spend / item.total_orders)}</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </article>
             })}
           </div>
         </div>
