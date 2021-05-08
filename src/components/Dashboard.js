@@ -13,27 +13,31 @@ import SidebarBottom from './Sidebar/SidebarBottom'
 const Dashboard = () => {
   const [orders, setOrders] = useState([])
   const [customers, setCustomers] = useState([])
+  console.log(orders)
 
   useEffect(() => {
 
-    //?? For demo purposes we are are importing JSON data from another file //??
+    // For demo purposes we are are importing JSON data from another file //??
     //?? Set the response data in state
 
-    axios.get('../Data/TotalOrdersData.json')
-      .then(resp => {
-        setOrders(resp.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    // axios.get('../Data/TotalOrdersData.json')
+    //   .then(resp => {
+    //     setOrders(resp.data)
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
 
-    axios.get('../Data/TotalCustomersData.json')
-      .then(resp => {
-        setCustomers(resp.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    // axios.get('../Data/TotalCustomersData.json')
+    //   .then(resp => {
+    //     setCustomers(resp.data)
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
+
+    setOrders(TotalOrdersData)
+    setCustomers(TotalCustomersData)
 
   }, [])
   
