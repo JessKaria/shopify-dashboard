@@ -190,8 +190,8 @@ Below is a breakdown of how I was able to get to deduct the figures for each til
 In the overview module, I am using Chart.js to display the order number/value over time. This was my first time using Chart.js and it was really exciting to see some of the data come to life. The set up for this was super straight forward. 
 
 - First I converted the datetime string to a moment object. 
-- I then sorted the array and created a two new arrays with values from the 'createdat' property and and the 'totalprice' property.
-- Then I pushed each of those property's to two seperate arrays which I set in state through the data and lapels properties.
+- I then sorted the array and created a two new arrays with values from the 'createdat' property and the 'totalprice' property.
+- Then I pushed each of those property's to two seperate arrays which I set in state through the data and labels properties.
 
 ```
     const emptyCount = []
