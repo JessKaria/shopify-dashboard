@@ -323,7 +323,7 @@ The final sidebar component returns the data which shows the average orders per 
 
 ## Wins
 
-The dashboard has solved a real-world problem that myself and my business partner ran into daily. We know have one central place to understand the KPI's that matter to us the most.
+The dashboard has solved a real-world problem that myself and my business partner ran into daily. We now have one central place to understand the KPI's that matter to us the most.
 
 ## Future Features
 
