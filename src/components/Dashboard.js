@@ -40,7 +40,7 @@ const Dashboard = () => {
     setCustomers(TotalCustomersData)
 
   }, [])
-  
+
   return <>
     <div className="page-container">
       <div className="columns">
@@ -53,16 +53,14 @@ const Dashboard = () => {
           </aside>
         </div>
         <div className="column is-10">
-        <Subscriptions orders={orders} customers={customers} />
+          <Subscriptions orders={orders} customers={customers} />
           <Chart orders={orders} />
           <div className="columns">
             <div className="column is-6">
-            <FilterProducts orders={orders} />
-            
-              
+              <FilterProducts orders={orders} />
             </div>
             <div className="column is-6">
-            <SearchCustomers customers={customers} />
+              <SearchCustomers customers={customers} />
             </div>
           </div>
         </div>
