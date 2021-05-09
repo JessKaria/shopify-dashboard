@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Line, Bar } from 'react-chartjs-2'
-import axios from 'axios'
+import { Bar } from 'react-chartjs-2'
 import moment from 'moment'
 import TotalOrdersData from '../Data/TotalOrdersData.json'
 
@@ -10,15 +9,17 @@ const Chart = () => {
   const chart = () => {
     const emptyCount = []
     const emptyCreated = []
+    
     const dateConverter = a => moment(a)
-    const ordersClean = TotalOrdersData.map(item => Object.assign(item, { created_at: dateConverter(item.created_at) }))
+    const ordersClean = TotalOrdersData.map(item => Object.assign(item, { created_at: dateConverter(item.created_at) }) )
 
     const sotedDate = ordersClean.sort(function (a, b) {
-      return a.created_at - b.created_at
+      return (a.created_at - b.created_at)
     })
+    
     for (const dataObj of sotedDate) {
       emptyCount.push(dataObj.line_items[0].total_price)
-      emptyCreated.push(dataObj.created_at)
+      emptyCreated.push(dataObj.created_at.format('YYYY-MM-DD'))
     }
     setChartData({
       labels: emptyCreated,
@@ -33,14 +34,11 @@ const Chart = () => {
         }
       ]
     })
-
   }
-
 
   useEffect(() => {
     chart()
   }, [])
-
 
   return <>
     <div className="card">
@@ -64,19 +62,20 @@ const Chart = () => {
                   yAxes: [
                     {
                       ticks: {
-                        autoSkip: true,
-                        maxTicksLimit: 10,
-                        beginAtZero: true
+                        display: false
+                        // maxTicksLimit: 10,
+                        // beginAtZero: true
                       },
                       gridLines: {
-                        display: false
+                        display: false,
+                        drawBorder: false
                       }
                     }
                   ],
                   xAxes: [
                     {
                       gridLines: {
-                        display: true
+                        display: false
                       }
                     }
                   ]

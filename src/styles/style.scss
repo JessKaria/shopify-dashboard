@@ -13,7 +13,7 @@ $white: #ffffff;
   font-family: poppins;
 }
 
-.content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
+.content  {
   margin-bottom: 1em;
 }
 
@@ -45,6 +45,7 @@ $white: #ffffff;
   font-size: 2em;
   color: $black;
 }
+
 
 .page-container {
   padding: 20px;

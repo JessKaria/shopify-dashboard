@@ -7,10 +7,11 @@ const FilterProducts = ({ orders }) => {
   const [endDate, setEndDate] = useState(new Date('2021/06/01'))
   const cleanDate = moment(startDate)
   const cleanEnd = moment(endDate)
+
+
   function filterOrders() {
     return orders.filter(item => item.created_at >= cleanDate && item.created_at <= cleanEnd)
   }
-
   return <>
     <div className="card">
       <header id="input-align" className="card-header">

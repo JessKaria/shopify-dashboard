@@ -11,13 +11,9 @@ const Sidebar = ({ orders }) => {
   const threeMonthsAgo = moment().subtract(3, 'months')
 
   const clean = orders.map(item => item.line_items[0].total_price).reduce((acc, count) => acc + count, 0)
-
   const lastSeven = orders.map(item =>item.created_at >= sevenDays && item.line_items[0].total_price).reduce((acc, count) => acc + count, 0)
-
   const lastThirdy = orders.map(item => item.created_at >= oneMonths && item.line_items[0].total_price).reduce((acc, count) => acc + count, 0)
-
   const lastThreeMonths = orders.map(item => item.created_at >= threeMonthsAgo && item.line_items[0].total_price).reduce((acc, count) => acc + count, 0)
-
 
   return <>
     <div id="sidebar" className="card">

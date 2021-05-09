@@ -66,7 +66,7 @@ const Subscriptions = ({ customers, orders }) => {
     <div className="card">
       <header className="card-header">
         <p className="card-header-title">
-          Active Subscribers</p>
+          Subscribers</p>
         <a href="#" className="card-header-icon" aria-label="more options">
         </a>
       </header>
