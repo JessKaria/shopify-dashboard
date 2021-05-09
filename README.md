@@ -1,21 +1,25 @@
-### ![here](https://cdn.shopify.com/s/files/1/0306/1016/1723/files/Untitled_design_ec5fbb2b-e6e7-4e51-a83c-c931e846c813_150x.png?v=1608993773)
-## Bauce Brothers | eCommerce Dashboard
 
-## Company overview
+## Bauce Brothers | eCommerce Dashboard
+### ![here](https://cdn.shopify.com/s/files/1/0306/1016/1723/files/Untitled_design_ec5fbb2b-e6e7-4e51-a83c-c931e846c813_150x.png?v=1608993773)
+
+## Company overview 🔥
 
 In 2019 a close friend and I started a hot sauce subscription service, called Bauce Brothers. What started as two friends comparing notes on their favourite sauces quickly transformed into the UK’s best hot sauce club. 
 
-![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/1.png?raw=true)
-
 You can view our store [here](https://baucebrothers.com).
 
-## Overview
+![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/1.png?raw=true)
+
+## Project overview 📊
+
+For my side business, Bauce Brothers I have built a custom dashboard by manipulating the Shopify Rest API to reveal information that was previously hidden in downloadable CSV files or nested in disapparate systems.
+
+- [VIEW THE REPO](https://github.com/JessKaria/shopify-dashboard)
+- [VIEW THE DEMO](https://jesskaria.github.io/shopify-dashboard/)
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/2.png?raw=true)
 
-For my side business, Bauce Brothers I have built a custom dashboard by manipulating the Shopify Rest API to reveal information that was previously hidden in downloadable CSV files or other systems.
-
-## Technologies used !
+## Technologies used ! 💻
 
 - React
 - JSX
@@ -28,22 +32,23 @@ For my side business, Bauce Brothers I have built a custom dashboard by manipula
 - Babel
 - Axios
 
-## Problem
+## Problem 🤞
 
 When we joined Shopify, they didn't have a native subscriptions offering, so we used a third party application called BOLD Subscriptions to allow us to provide products that would automatically recur. 
 
 However, this did come with some trade offs. We had to have two seperate checkouts for recurring and single order products. This caused lots of issues with reporting but also meant that we couldn't dynamically add shipping for European customers if they selected pre-paid products. 
 
-The result, was that we had three products correctly set up using the recurring checkout, and the other pre-paid products using the single product checkout. This meant we were spending a lot of time in excel and reporting was incredibly cumbersome.
-
+The result, was that we had to use Shopify's single product checkout for our pre-pay products, and manually keep track of them. This meant we were spending a lots of time in excel and reporting was incredibly cumbersome, confusing and often inaccurate.
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/3.png?raw=true)
 
 The top three products are correctly set up, the bottom three pre-pay products are not. The above photo shows how those are split.
 
-## Goal
+## Goal 🎯
 
-The goal was to create a central dashboard that could monitor KPI's in one place and update dynamically, key stats or features that it must include:
+The goal was to create a central dashboard that could monitor KPI's, update dynamically.
+
+Key stats or features that it must include:
 
 * Total subscribers
 * New subscribers
@@ -53,7 +58,7 @@ The goal was to create a central dashboard that could monitor KPI's in one place
 * Search customers to see if they are a subscriber or not
 * Visually show order value over time
 
-## Shopify Endpoints
+## Shopify Endpoints 🛒
 
 For the purposes of the demo site, I have created fake JSON data that I am importing locally. I have replicated the structure of the responses, although I have only kept specific fields relevant to the project. 
 
@@ -113,7 +118,7 @@ Customers Object
   
 ```
 
-## Dashboard
+## Dashboard 📊
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/2.png?raw=true)
 
@@ -122,9 +127,7 @@ The above is snapshot of the modular dashboard that I have built you can view th
 Despite importing the JSON data I have also provided code demonstrating how I would conduct the get request in the top dashboard component using Axios.
  
 
-
-
-## Subscribers
+## Subscribers 📩
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/Untitled%20design%20(1).png?raw=true)
 
@@ -187,7 +190,7 @@ Below is a breakdown of how I was able to get to deduct the figures for each til
   const totalActiveSubs = fourLineItems.length + threeLineItems.length + twoLineItems.length + totalSubs.length
 ```
 
-## Overview
+## Overview 🔭
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/Untitled%20design%20(2).png?raw=true)
 
@@ -214,7 +217,7 @@ In the overview module, I am using Chart.js to display the order number/value ov
     }
 ```
 
-## Customers
+## Customers 🙋🏾
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/Untitled%20design%20(4).png?raw=true)
 
@@ -267,7 +270,7 @@ The search feature will match the input on either firstname or lastname.
       </div>
 ```
 
-## Products
+## Products 🔥
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/Untitled%20design%20(3).png?raw=true)
 
@@ -290,7 +293,7 @@ I then conversted those to moment objects and used a simple filter function whic
   
 ```
 
-## Sales
+## Sales 💰
 
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/Untitled%20design%20(5).png?raw=true)
 
@@ -311,7 +314,8 @@ The top sales sidebar again takes advantage of the moment.js library to calculat
   
 ```
 
-## Other 
+## Other 🔗
+
 ![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/Untitled%20design%20(6).png?raw=true)
 
 The final sidebar component returns the data which shows the average orders per customer, the average revenue per customer and how many have opted in to recieve marketing communications.
@@ -323,9 +327,9 @@ The final sidebar component returns the data which shows the average orders per 
   
 ```
 
-## Wins
+## Wins 👍🏾
 
-The dashboard has solved a real-world problem that myself and my business partner ran into daily. We now have one central place to understand the KPI's that matter to us the most.
+The dashboard has solved a real-world problem that myself and my business partner ran into daily. We know have one central place to understand the KPI's that matter to us the most.
 
 ## Future Features
 
@@ -335,7 +339,7 @@ The dashboard has solved a real-world problem that myself and my business partne
 
 - I also plan on rebuilding this with GraphQL to better understand the differences between that and REST.
 
-## What I learned...
+## What I learned... 🔮
 
 This was my first time using the Datepicker, Chart.js and moment.js libraries and it was awesome to see how they enabled me to visualise, and manipulate by day and time. I also feel confident in adding more complex visualisations and integrating data from other API's.
 
