@@ -9,7 +9,9 @@ In 2019 a close friend and I started a hot sauce subscription service, called Ba
 
 You can view our store [here](https://baucebrothers.com).
 
-This project is a custom dashboard I have created by manipulating the Shopify Rest API to reveal information that was previously hidden in downloadable CSV files or other systems.
+## Overview
+
+For my side business, Bauce Brothers I have built a custom dashboard by manipulating the Shopify Rest API to reveal information that was previously hidden in downloadable CSV files or other systems.
 
 ## Technologies used !
 
@@ -24,7 +26,7 @@ This project is a custom dashboard I have created by manipulating the Shopify Re
 - Babel
 - Axios
 
-## Overview
+## Problem
 
 When we joined Shopify, they didn't have a native subscriptions offering, so we used a third party application called BOLD Subscriptions to allow us to provide products that would automatically recur. 
 
