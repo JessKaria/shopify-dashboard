@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import moment from 'moment'
 import TotalSubscribers from './SubsModal/TotalSubscribers'
 import NewLastThreeMonths from './SubsModal/NewLastThreeMonths'
