@@ -11,6 +11,8 @@ You can view our store [here](https://baucebrothers.com).
 
 ## Overview
 
+![here](https://github.com/JessKaria/shopify-dashboard/blob/main/src/images/2.png?raw=true)
+
 For my side business, Bauce Brothers I have built a custom dashboard by manipulating the Shopify Rest API to reveal information that was previously hidden in downloadable CSV files or other systems.
 
 ## Technologies used !
