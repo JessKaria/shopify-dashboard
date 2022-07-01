@@ -1,6 +1,6 @@
 
 ## Bauce Brothers | eCommerce Dashboard
-### ![here](https://cdn.shopify.com/s/files/1/0306/1016/1723/files/Untitled_design_ec5fbb2b-e6e7-4e51-a83c-c931e846c813_150x.png?v=1608993773)
+### ![here](https://cdn.shopify.com/s/files/1/0306/1016/1723/files/Untitled_design_14_2d5ee133-84c1-4344-aeb6-c0db4b734503_100x.png?v=1641845853)
 
 ## Company overview 🔥
 
